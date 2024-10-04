@@ -8,9 +8,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        inter: ["var(--font-inter)"],
+        montserrat: ["var(--font-montserrat)"],
+        Act_Of_Rejection: ["Act_Of_Rejection", "sans-serif"],
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        white: {
+          DEFAULT: "#FFF",
+          100: "rgba(255, 255, 255, 0.8)",
+        },
+        primary: "#FF0000",
+        secondary: "#F6F5F5",
+        dark: "#000000",
+        lightGray: "#F0F0F0",
       },
     },
   },
