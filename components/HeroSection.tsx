@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export const HeroSection = () => {
   return (
-    <section className="bg-primary min-h-[98vh] w-full overflow-hidden">
+    <section className="bg-primary  w-full overflow-hidden">
       <Navbar />
       <div className="relative pt-[80px] md:pt-[180px] lg:pt-[200px] xl:pt-[230px]">
         <h2 className="text-white text-3xl font-Act_Of_Rejection  uppercase md:text-[60px] lg:text-[90px] xl:text-[140px] opacity-40 absolute top-[12%] left-[4%] md:top-[22%] md:left-[4%] lg:top-[26%] lg:left-[7%]">
