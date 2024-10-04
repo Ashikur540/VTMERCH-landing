@@ -14,7 +14,7 @@ export const BooksSection = () => {
                 Patrick Bet-David&apos;s
               </h3>
               <h2 className="font-bold font-montserrat leading-tight  text-4xl md:text-6xl lg:text-6xl xl:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-[#DE2A2F] to-[#EF5256] ">
-                Signed <br /> Collection
+                Signed <br className="hidden lg:block" /> Collection
               </h2>
             </div>
 
@@ -38,14 +38,14 @@ export const BooksSection = () => {
               alt="signature-image"
               //   width={200}
               //   height={`200`}
-              className="h-full max-w-[180px]  md:max-w-[260px] xl:max-w-[360px] w-full"
+              className="h-full max-w-[180px]  md:max-w-[260px] xl:max-w-[320px] w-full"
             />
             <Image
               src={bookImage1}
               alt="signature-image"
               //   width={200}
               //   height={200}
-              className="h-full max-w-[180px]  md:max-w-[260px] xl:max-w-[360px] w-full"
+              className="h-full max-w-[180px]  md:max-w-[260px] xl:max-w-[320px] w-full"
             />
           </div>
         </div>

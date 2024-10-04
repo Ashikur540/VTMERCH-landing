@@ -9,7 +9,7 @@ export const HeroSection = () => {
   return (
     <section className="bg-primary  w-full overflow-hidden">
       <Navbar />
-      <div className="relative pt-[80px] md:pt-[180px] lg:pt-[200px] xl:pt-[230px]">
+      <div className="relative pt-[80px] md:pt-[120px] lg:pt-[160px] pb-8 xl:pb-10">
         <h2 className="text-white text-3xl font-Act_Of_Rejection  uppercase md:text-[60px] lg:text-[90px] xl:text-[140px] opacity-40 absolute top-[12%] left-[4%] md:top-[22%] md:left-[4%] lg:top-[26%] lg:left-[7%]">
           Future looks stylish!
         </h2>
