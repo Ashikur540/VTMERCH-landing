@@ -18,7 +18,7 @@ const config: Config = {
           DEFAULT: "#FFF",
           100: "rgba(255, 255, 255, 0.8)",
         },
-        primary: "#FF0000",
+        primary: "#EA2127",
         secondary: "#F6F5F5",
         dark: "#000000",
         lightGray: "#F0F0F0",
