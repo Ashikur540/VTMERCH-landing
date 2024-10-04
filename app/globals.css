@@ -18,3 +18,7 @@
 html {
   font-family: var(--font-inter);
 }
+
+h2 {
+  font-family: var(--font-montserrat);
+}
