@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-import { footerIcons, footerNavs } from "@/data";
+import { footerIcons, footerNavs, socialIcons } from "@/data";
 import Image from "next/image";
 import { siteLogoRed } from "@/public/images";
 
@@ -95,13 +95,10 @@ export const Footer = () => {
                 <a>store@valuetainment.com</a>
               </div>
               <div className="flex justify-start gap-2 text-white-100">
-                {[1, 2, 3, 4].map((_, index) => (
-                  <a href="#" key={index}>
-                    <img
-                      src="/images/icons/facebook (4).svg"
-                      alt="social-logo"
-                    />
-                  </a>
+                {socialIcons.map((data, index) => (
+                  <Link href={data.url} key={index}>
+                    <img src={data.icon} alt={data.name} />
+                  </Link>
                 ))}
               </div>
             </div>

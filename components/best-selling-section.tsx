@@ -1,39 +1,65 @@
-import { productImage2 } from "@/public/images";
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
+
 import IconCartPlus from "./icons/IconCartPlus";
 import IconWishlist from "./icons/IconWishlist";
 import { bestSellingProducts } from "@/data";
+import { BlurFade } from "./common/BlurFadeWrapper";
 
 export const BestSellingSection = () => {
+  const parentVariants = {
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const childVariants = {
+    hidden: { opacity: 0, scale: 0.8, filter: `blur(10px)` },
+    visible: { opacity: 1, scale: 1, filter: `blur(0px)` },
+  };
+
   return (
     <section className=" py-10 md:py-16 xl:py-24 mx-auto bg-secondary">
       <div className="container mx-auto px-[15px]">
-        <h2 className="text-3xl md:text-5xl xl:text-[64px] font-semibold uppercase leading-[120%] mb-4 md:mb-12 tracking-[0.5px] font-montserrat2">
-          Buy one get 1 free <br /> on{" "}
-          <span
-            className="bg-clip-text text-white bg-gradient-to-b from-neutral-50 to-slate-50  "
-            style={{
-              WebkitTextStroke: "1px #000000",
-              WebkitTextFillColor: "#fff",
-              fontWeight: "bold",
-              strokeLinejoin: "round",
-              strokeMiterlimit: "1",
-              color: "#ff",
-            }}
-          >
-            all bestselling products
-          </span>
-        </h2>
+        <BlurFade inView delay={0.1}>
+          <h2 className="text-3xl md:text-5xl xl:text-[64px] font-semibold uppercase leading-[120%] mb-4 md:mb-12 tracking-[0.5px] font-montserrat2">
+            Buy one get 1 free <br /> on{" "}
+            <span
+              className="bg-clip-text text-white bg-gradient-to-b from-neutral-50 to-slate-50  "
+              style={{
+                WebkitTextStroke: "1px #000000",
+                WebkitTextFillColor: "#fff",
+                fontWeight: "bold",
+                strokeLinejoin: "round",
+                strokeMiterlimit: "1",
+                color: "#ff",
+              }}
+            >
+              all bestselling products
+            </span>
+          </h2>
+        </BlurFade>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center items-center gap-10">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center items-center gap-10"
+          variants={parentVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {bestSellingProducts.map((products) => (
-            <div
+            <motion.div
               className="group bg-white  max-w-sm rounded-lg mx-auto"
               style={{
                 boxShadow: "6px 6px 12px rgba(47, 47, 47, 0.02)", // Shadow effect
               }}
               key={products.id}
+              variants={childVariants}
             >
               <div className="relative p-4 overflow-hidden cursor-pointer">
                 {/* Product Image */}
@@ -69,9 +95,9 @@ export const BestSellingSection = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

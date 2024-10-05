@@ -1,6 +1,11 @@
-import { manImage, quoteSvg } from "@/public/images";
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
+
+import { manImage, quoteSvg } from "@/public/images";
+import { BlurFade } from "./common/BlurFadeWrapper";
 
 export const OurMission = () => {
   return (
@@ -21,14 +26,22 @@ export const OurMission = () => {
                 className="w-[4rem] md:w-[120px] lg:w-[160px] xl:w-[210px] "
               />
             </div>
-            <blockquote className="text-xl md:text-3xl lg:text-4xl font-bold  pt-10 md:pt-16 lg:pt-2 font-montserrat text-white">
-              OUR MISSION IS TO ENLIGHTEN, ENTERTAIN AND EMPOWER CURRENT AND
-              FUTURE LEADERS AROUND THE WORLD.
-            </blockquote>
+            <BlurFade inView inViewMargin="2%">
+              <blockquote className="text-xl md:text-3xl lg:text-4xl font-bold  pt-10 md:pt-16 lg:pt-2 font-montserrat text-white">
+                OUR MISSION IS TO ENLIGHTEN, ENTERTAIN AND EMPOWER CURRENT AND
+                FUTURE LEADERS AROUND THE WORLD.
+              </blockquote>
+            </BlurFade>
           </div>
 
           {/* Elevated Image Effect */}
-          <div className="static mx-auto xl:absolute bottom-0 right-[5%]">
+          <motion.div
+            className="static mx-auto xl:absolute bottom-0 right-[5%]"
+            initial={{ x: "12%", filter: "blur(10px)" }}
+            whileInView={{ x: "5%", filter: "blur(0px)" }}
+            transition={{ duration: 1, ease: "easeInOut", delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             <Image
               src={manImage} // Same image or an additional element to create elevation
               alt="Elevated Image"
@@ -36,7 +49,7 @@ export const OurMission = () => {
               height={300}
               className="min-h-full sm:h-[20rem] xl:h-[35.5rem] w-full "
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

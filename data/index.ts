@@ -172,3 +172,26 @@ export const footerIcons = [
   "/images/icons/paypal.svg",
   "/images/icons/american-express.svg",
 ];
+
+export const socialIcons = [
+  {
+    url: "#",
+    name: "Facebook",
+    icon: "/images/icons/facebook.svg",
+  },
+  {
+    url: "#",
+    name: "Twitter",
+    icon: "/images/icons/twitter.svg",
+  },
+  {
+    url: "#",
+    name: "Linkedin",
+    icon: "/images/icons/linkedin.svg",
+  },
+  {
+    url: "#",
+    name: "Instagram",
+    icon: "/images/icons/instagram.svg",
+  },
+];
