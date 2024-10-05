@@ -9,8 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["inter", "sans-serif"],
-        montserrat: ["montserrat", "sans-serif"],
+        inter: ["var(--font-inter)"],
+        montserrat: ["var(--font-montserrat)"],
+        montserrat2: ["Montserrat", "sans-serif"],
         Act_Of_Rejection: ["Act_Of_Rejection", "sans-serif"],
       },
       colors: {
