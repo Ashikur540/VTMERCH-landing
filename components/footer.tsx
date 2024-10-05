@@ -96,8 +96,18 @@ export const Footer = () => {
               </div>
               <div className="flex justify-start gap-2 text-white-100">
                 {socialIcons.map((data, index) => (
-                  <Link href={data.url} key={index}>
-                    <img src={data.icon} alt={data.name} />
+                  <Link
+                    href={data.url}
+                    key={index}
+                    className="social-icon-wrapper hover:text-primary"
+                  >
+                    <Image
+                      src={data.icon}
+                      alt={data.name}
+                      width={24}
+                      height={24}
+                      className="social-icon"
+                    />
                   </Link>
                 ))}
               </div>
@@ -115,9 +125,9 @@ export const Footer = () => {
                   className="w-8 h-8 flex items-center justify-center"
                   key={index}
                 >
-                  <a href="#">
+                  <Link href="#">
                     <img src={icon} alt="social-logo" />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

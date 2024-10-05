@@ -18,3 +18,21 @@
 html {
   font-family: var(--font-inter);
 }
+
+.social-icon-wrapper {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.social-icon-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.social-icon {
+  transition: filter 0.3s ease;
+}
+
+.social-icon-wrapper:hover .social-icon {
+  filter: brightness(0) saturate(100%) invert(15%) sepia(100%) saturate(6932%)
+    hue-rotate(0deg) brightness(100%) contrast(115%);
+}
