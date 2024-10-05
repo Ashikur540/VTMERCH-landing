@@ -1,7 +1,13 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
-import { motion, useTransform, useScroll, useMotionValue } from "framer-motion";
+import {
+  motion,
+  useTransform,
+  useScroll,
+  useMotionValue,
+  useSpring,
+} from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -37,6 +43,11 @@ export const HeroSection = () => {
   }, []);
 
   const x = useTransform(scrollYProgress, [0, 1], [0, -containerWidth]);
+  const smoothX = useSpring(isMobile ? dragX : x, {
+    damping: 50,
+    stiffness: 400,
+    mass: 0.5,
+  });
 
   return (
     <section
@@ -55,7 +66,7 @@ export const HeroSection = () => {
           <motion.div
             ref={containerRef}
             className="pl-8 md:pl-10 xl:pl-[185px] flex justify-start items-start gap-x-4 cursor-grab sm:cursor-none"
-            style={{ x: isMobile ? dragX : x }}
+            style={{ x: smoothX }}
             drag={isMobile ? "x" : false}
             dragConstraints={
               isMobile ? { right: 0, left: -containerWidth } : {}
