@@ -18,7 +18,7 @@ export const BooksSection = () => {
               </h2>
             </div>
 
-            <button className="group bg-white py-4 px-8 rounded-xl flex justify-center items-center gap-2 hover:shadow-xl hover:shadow-slate-600 transition-shadow duration-300 tracking-tight uppercase font-medium">
+            <button className="group bg-white text-sm sm:text-base  px-6 py-2.5  sm:py-4 sm:px-8 rounded-xl flex justify-center items-center gap-2 hover:shadow-xl hover:shadow-slate-600 transition-shadow duration-300 tracking-tight uppercase font-medium">
               <span>Shop Now</span>
               <IconArrowRight className="group-hover:translate-x-2 transition-transform duration-300" />
             </button>

@@ -3,12 +3,13 @@ import Image from "next/image";
 import React from "react";
 import IconCartPlus from "./icons/IconCartPlus";
 import IconWishlist from "./icons/IconWishlist";
+import { bestSellingProducts } from "@/data";
 
 export const BestSellingSection = () => {
   return (
     <section className=" py-10 md:py-16 xl:py-24 mx-auto bg-secondary">
       <div className="container mx-auto px-[15px]">
-        <h2 className="text-3xl md:text-5xl xl:text-[64px] font-semibold uppercase leading-[120%] mb-4 md:mb-12 tracking-[0.5px] font-montserrat">
+        <h2 className="text-3xl md:text-5xl xl:text-[64px] font-semibold uppercase leading-[120%] mb-4 md:mb-12 tracking-[0.5px] font-montserrat2">
           Buy one get 1 free <br /> on{" "}
           <span
             className="bg-clip-text text-white bg-gradient-to-b from-neutral-50 to-slate-50  "
@@ -26,19 +27,21 @@ export const BestSellingSection = () => {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center items-center gap-10">
-          {[1, 2, 4, 5].map((_, index) => (
+          {bestSellingProducts.map((products) => (
             <div
               className="group bg-white  max-w-sm rounded-lg mx-auto"
               style={{
                 boxShadow: "6px 6px 12px rgba(47, 47, 47, 0.02)", // Shadow effect
               }}
-              key={index}
+              key={products.id}
             >
               <div className="relative p-4 overflow-hidden cursor-pointer">
                 {/* Product Image */}
                 <Image
-                  src={productImage2}
+                  src={products.image}
                   alt="Product"
+                  width={1000}
+                  height={1000}
                   className="w-full h-full object-cover  rounded-lg "
                 />
 
@@ -58,12 +61,12 @@ export const BestSellingSection = () => {
 
               {/* Product Info */}
               <div className="p-4">
-                <h3 className="text-sm font-semibold">
-                  Army Green Active Short Sleeve
-                </h3>
+                <h3 className="text-sm font-semibold">{products.name}</h3>
                 <div className="flex justify-start items-center gap-3">
-                  <p className="text-lg font-bold">$34.95</p>
-                  <p className="text-gray-500 line-through">$34.95</p>
+                  <p className="text-lg font-bold">$ {products.price}</p>
+                  <p className="text-gray-500 line-through">
+                    $ {products.salePrice}
+                  </p>
                 </div>
               </div>
             </div>
