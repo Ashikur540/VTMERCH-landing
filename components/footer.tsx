@@ -9,7 +9,10 @@ export const Footer = () => {
   return (
     <footer className="text-white bg-black px-4 py-5 ">
       <div className="container mx-auto">
-        <div className="flex justify-start items-center pt-12 mb-4 md:pb-8 ">
+        <Link
+          href={"/"}
+          className="flex justify-start items-center pt-12 mb-4 md:pb-8 "
+        >
           <Image
             src={siteLogoRed}
             alt="site-logo"
@@ -20,7 +23,7 @@ export const Footer = () => {
           <h4 className="font-montserrat font-extrabold tracking-[120%] text-2xl sm:text-4xl md:text-[5.25rem] xl:text-[100px]">
             VTMERCH
           </h4>
-        </div>
+        </Link>
         <div className=" justify-start block sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5 sm:gap-6 md:gap-12 border-t pt-6 md:pt-12 border-[#a6a5a377]">
           <div className="col-span-2 lg:max-w-[520px]">
             <p
