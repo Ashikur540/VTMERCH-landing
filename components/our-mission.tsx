@@ -36,10 +36,10 @@ export const OurMission = () => {
 
           {/* Elevated Image Effect */}
           <motion.div
-            className="static mx-auto xl:absolute bottom-0 right-[5%]"
-            initial={{ x: "12%", filter: "blur(10px)" }}
+            className="static mx-auto xl:absolute bottom-0 right-[5%] overflow-hidden sm:overflow-visible"
+            initial={{ x: "12%", filter: "blur(5px)" }}
             whileInView={{ x: "5%", filter: "blur(0px)" }}
-            transition={{ duration: 1, ease: "easeInOut", delay: 0.2 }}
+            transition={{ duration: 1, ease: "easeInOut", delay: 0.1 }}
             viewport={{ once: true }}
           >
             <Image

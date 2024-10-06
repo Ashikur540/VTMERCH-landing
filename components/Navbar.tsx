@@ -3,12 +3,13 @@ import React from "react";
 
 import { siteLogo } from "@/public/images";
 import IconBars from "@/components/icons/IconBars";
+import Link from "next/link";
 
 export const Navbar = () => {
   return (
     <div>
       <div className="flex justify-between items-center py-4 md:py-6 xl:py-10  bg-primary text-white  mx-auto px-4 sm:px-8 md:px-16 lg:px-20">
-        <div id="logo" className="flex items-center space-x-4 py-2">
+        <Link href={"/"} id="logo" className="flex items-center space-x-4 py-2">
           <Image
             src={siteLogo}
             alt="site-logo"
@@ -19,7 +20,7 @@ export const Navbar = () => {
           <h4 className="font-montserrat font-extrabold text-white text-2xl md:text-4xl xl:text-[100px] tracking-[120%]">
             VTMERCH
           </h4>
-        </div>
+        </Link>
 
         <IconBars className="text-white text-2xl sm:text-4xl cursor-pointer" />
       </div>
